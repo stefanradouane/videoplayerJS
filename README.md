@@ -4,7 +4,7 @@
 Styling the default controls of an HTML `<video>` is not possible, but what if you want to make a custom videoplayer. videoplayerJS is the solution for this problem. With this js front-end library you can create an videoplayer easier than ever before.
 
 ## ✨ Installation
-To use this library you can use multiple solutions. The first solution is by simply adding a `<script>` tag to your HTML. The second solution is to install this module through NPM.
+Using this library is very easy, use it by simply adding a `<script>` tag to your HTML.
 
 <details>
 <summary><strong>Install this library with the script tag</strong></summary>
@@ -28,27 +28,6 @@ So you want to use this library with a `script` tag:<br>
 ```
 
 3. <strong>Well done, for now you are all set up, <em>ain't that easy</em></strong>
-
-</details>
-<details>
-<summary><strong>Install this library with NPM</strong></summary>
-
-So you want to use this as a node module and download it through NPM:<br>
-
-1. First of all make sure you have NPM installed // [Download NPM/node.js](https://nodejs.org/en/download/)
-
-```ZSH
-// Check NPM version with the terminal
-npm -v
-```
-
-2. If you have installed NPM, install the package with the terminal.
-```ZSH
-npm install videoplayerJS
-```
-
-3. <strong>Well done, for now you are all set up, <em>ain't that easy</em></strong>
-</details>
 
 ## Using this library
 
@@ -144,20 +123,7 @@ By defining an `Array` of three value's as the color scheme the tile color, base
 > <em>If there is no theme defined the default theme will be used.</em>
 
 
-
 ### That's it. Enjoy the videoplayer!
-
-
-<!-- const themes = ["flashy", "flashy-minimal", "box", "box-minimal", "minimal", "default"] -->
-
-</details>
-
-<details>
-<summary><strong>Using this library as a NPM module</strong></summary>
-
-</details>
-
-
 
 ## Use case
 
@@ -180,13 +146,6 @@ By defining an `Array` of three value's as the color scheme the tile color, base
 </body>
 
 ```
-
-</details>
-
-<details>
-<summary><strong>Use case library as a NPM module</strong></summary>
-
-</details>
 
 
 

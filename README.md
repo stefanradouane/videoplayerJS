@@ -7,10 +7,18 @@ Styling the default controls of an HTML `<video>` is not possible, but what if y
 To use this library you can use multiple solutions. The first solution is by simply adding a `<script>` tag to your HTML. The second solution is to install this module through NPM.
 
 <details>
-  <summary>Use this library with the <script> tag</summary>
-    1. First of all add the script tag to your website. The source of this URL should be url
-    2. Now you have to add the <link> tag to the <head> of your website. The source of this URL should be
-    \n// URL
+<summary>Use this library with the <script> tag</summary>
+So you want to use this library with a <script>:<br>
+1. First of all add the script tag to your website. The source of this URL should be url
+``` HTML
+  <body>
+    <script src="LINK TO SCRIPT"></script>
+  </body>
+```
+  
+2. Now you have to add the <link> tag to the <head> of your website. The source of this URL should be
+3. TEst
+4. TESTT
 </details>
 <details>
   <summary>Use this library with NPM</summary>

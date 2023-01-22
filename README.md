@@ -7,8 +7,45 @@ Styling the default controls of an HTML `<video>` is not possible, but what if y
 To use this library you can use multiple solutions. The first solution is by simply adding a `<script>` tag to your HTML. The second solution is to install this module through NPM.
 
 <details>
-<summary>Use this library with the `script` tag</summary>
+<summary><strong>Use this library with the script tag</strong></summary>
+
 So you want to use this library with a `script`:<br>
+
+1. Node.js // [Download node.js](https://nodejs.org/en/download/)
+2. Test
+
+```
+// Check node version
+node -v
+```
+
+-   NPM
+
+```
+// Install NPM
+npm install npm --global
+```
+
+```
+// Check NPM version
+npm -v
+```
+
+-   Git // [Download Git](https://github.com/git-guides/install-git)
+
+```
+// Check version
+git version
+```
+
+-   MongoDB Compass
+
+1. Download [MongoDB Compass](https://www.mongodb.com/try/download/compass)<br>
+2. Installeer de app
+3. Als je de app opent en "New Connection" ziet staan ben je klaar, voor nu.
+
+</details>
+
 1. First of all add the script tag to your website. The source of this URL should be url
 ``` HTML
   <body>

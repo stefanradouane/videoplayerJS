@@ -14,13 +14,17 @@ So you want to use this library with a `script`:<br>
 1. First of all add the script tag to your website. The source of this URL should be url
 ``` HTML
   <body>
-    <script src="LINK TO SCRIPT"></script>
+    ...
+    <script src="https://www.github.com"></script>
   </body>
 ```
-2. Now you have to add the <link> tag to the <head> of your website. The source of this URL should be
+2. Now you have to add the link tag to the head of your website. The source of this URL should be
 
-```
-// Check node version
+``` HTML
+<head>
+  ...
+  <link rel="stylesheet" href="https://www.github.com" />
+</head>
 node -v
 ```
 

@@ -176,7 +176,7 @@ By defining an `Array` of three value's as the color scheme the tile color, base
   <source>
 </video>
 ...
-<script src="URL"> </script>
+<script src="URL"></script>
 </body>
 
 ```

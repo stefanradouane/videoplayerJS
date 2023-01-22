@@ -1,5 +1,5 @@
 {
-  "name": "videoplayer",
+  "name": "videoplayerJS",
   "version": "1.0.0",
   "description": "A simple to use videoplayer to do the styling and fixes the eventhandlers",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stefanradouane/videoplayer.git"
+    "url": "git+https://github.com/stefanradouane/videoplayerJS.git"
   },
   "keywords": [
     "Front-end",
@@ -18,7 +18,7 @@
   "author": "Stefan Radouane",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/stefanradouane/videoplayer/issues"
+    "url": "https://github.com/stefanradouane/videoplayerJS/issues"
   },
-  "homepage": "https://github.com/stefanradouane/videoplayer#readme"
+  "homepage": "https://github.com/stefanradouane/videoplayerJS#readme"
 }

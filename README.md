@@ -129,7 +129,7 @@ By defining an `Array` of two value's as the color scheme the tile color an base
 <video class="videoplayer" data-settings="{'colorscheme': ['COLOR', 'COLOR']}">
 ```
 
-<em><strong>The first value represents the base color, and the second value the tile color<strong></em>
+<em><strong>The first value represents the base color, and the second value the tile color</strong></em>
 
 3. Define base color, tile color and hover color
 
@@ -139,11 +139,9 @@ By defining an `Array` of three value's as the color scheme the tile color, base
 <video class="videoplayer" data-settings="{'colorscheme': ['COLOR', 'COLOR', 'COLOR']}">
 ```
 
-<em><strong>The first value represents the base color, the second value the tile color and the third value the hover color<strong></em>
+<em><strong>The first value represents the base color, the second value the tile color and the third value the hover color</strong></em>
 
-
-
-<em>If there is no theme defined the default theme will be used.</em>
+> <em>If there is no theme defined the default theme will be used.</em>
 
 
 

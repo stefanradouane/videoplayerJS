@@ -1,0 +1,470 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px 30px;
+}
+
+@media (min-width:500px){
+    .page {
+        padding: 20px 100px;
+    }
+}
+
+/*                 */
+/* DEFAULT STYLING */
+/*                 */
+
+
+.videoplayer-container * {
+    --font-style: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    font-family: var(--font-style);
+    margin: 0;
+    padding: 0;
+    transition-duration: 100ms;
+}
+
+.videoplayer-container {
+    --base-color: rgba(11,11,11,0.75);
+    --tile-color: rgba(200, 200, 200, 1);
+    --tile-color: rgba(160, 160, 160, 1);
+
+}
+
+.videoplayer-container {
+    margin:auto;
+    overflow: hidden;
+    position: relative;
+    width: fit-content;
+}
+
+.videoplayer-controller{
+    display: flex;
+    background: var(--base-color);
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    padding: .2em;
+    align-items: center;
+}
+
+
+.videoplayer-control {
+    background-color: transparent;
+    border:none;
+}
+
+.videoplayer-control svg {
+    display: block;
+    fill: var(--tile-color);
+}
+
+.videoplayer-control:hover svg{
+    fill:var(--hover-color);
+}
+
+/*                            */
+/* MAKE SURE THE BUTTONS WORK */
+/*                            */
+
+/* Play button */
+/* DEFAULT */
+.videoplayer-container .videoplayer-control__icon--play{
+    display: block;
+}
+.videoplayer-container .videoplayer-control__icon--pause,
+.videoplayer-container .videoplayer-control__icon--loading{
+    display: none;
+}
+
+/* PLAYING */
+.videoplayer-container[data-state = "playing"] .videoplayer-control__icon--pause{
+    display: block;
+}
+
+.videoplayer-container[data-state = "playing"] .videoplayer-control__icon--play,
+.videoplayer-container[data-state = "playing"] .videoplayer-control__icon--loading{
+    display: none;
+}
+
+/* PAUSED */
+.videoplayer-container[data-state = "paused"] .videoplayer-control__icon--play{
+    display: block;
+}
+
+.videoplayer-container[data-state = "paused"] .videoplayer-control__icon--pause,
+.videoplayer-container[data-state = "paused"] .videoplayer-control__icon--loading{
+    display: none;
+}
+
+/* LOADING */
+.videoplayer-container[data-state = "loading"] .videoplayer-control__icon--loading{
+    display: block;
+}
+
+.videoplayer-container[data-state = "loading"] .videoplayer-control__icon--play,
+.videoplayer-container[data-state = "loading"] .videoplayer-control__icon--pause{
+    display: none;
+}
+
+/* DEFAULT LOADING STYLING */
+.videoplayer-container .videoplayer-control__icon--loading{
+    fill: none !important;
+    stroke: var(--tile-color);
+    stroke-width:30px;
+    overflow: visible;
+    stroke-dasharray: 471;
+    stroke-dashoffset: 100;
+    transform: rotate(0deg);
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+
+    }
+}
+
+/* CONTROL */
+.videoplayer-control{
+    transition: 100ms all ease-in-out;
+    display: block;
+    cursor: pointer;
+}
+
+/* VOLUME */
+.videoplayer-volume{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.videoplayer-control--volume::after{
+    cursor: default;
+    pointer-events: all;
+    content: '';
+    width: 15px;
+    height: 20px;
+    position: absolute;
+    bottom: 100%;
+    left:0;
+}
+
+
+.videoplayer-controls .videoplayer-control svg{
+    height:30px;
+}
+
+.videoplayer-control svg{
+    height: 15px;
+}
+
+
+.videoplayer-timer{
+    cursor: default;
+    font-size: 12px;
+    color: var(--tile-color);
+}
+/*  */
+/*  */
+/*  */
+/* CHANGE */
+/*  */
+/* must be a classname containing videoplayer => eg. videoplayer-obect, videoplayer-video, videoplayer */
+/*  */
+.videoplayer {
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+}
+
+
+
+
+
+.videoplayer-controls {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: 250ms all;
+}
+
+/* FULLSCREEN CONTROLS */
+
+.videoplayer-container .videoplayer-control__icon--fs-open{
+    display: block;
+}
+
+.videoplayer-container .videoplayer-control__icon--fs-close{
+    display: none;
+}
+
+.videoplayer-container--fullscreen .videoplayer-control__icon--fs-open{
+    display: none;
+}
+
+.videoplayer-container--fullscreen .videoplayer-control__icon--fs-close{
+    display: block;
+}
+
+.videoplayer-container--fullscreen .videoplayer{
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+
+.videoplayer-container:hover .videoplayer-controls {
+    display: block;
+}
+
+.videoplayer-controls .control[data-action="play"] {
+    transform: translate(-40%, -50%);
+
+}
+
+
+.videoplayer-control.videoplayer-control--fullscreen{
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+
+
+
+/* VIDEOVOLUME ICON */
+.videoplayer-control--volume[data-volume ~= "0"] .videoplayer-control__icon-path--mute {
+    display: block;
+}
+
+.videoplayer-control--volume[data-volume ~= "1"] .videoplayer-control__icon-path--base {
+    display: block;
+}
+
+.videoplayer-control--volume[data-volume ~= "2"] .videoplayer-control__icon-path--low {
+    display: block;
+}
+
+.videoplayer-control--volume[data-volume ~= "3"] .videoplayer-control__icon-path--low,
+.videoplayer-control--volume[data-volume ~= "3"] .videoplayer-control__icon-path--high  {
+    display: block;
+}
+
+.videoplayer-control__icon-path {
+    display: none;
+}
+
+.videoplayer-control__icon-path--base {
+    display: block;
+}
+
+/* VOLUME AND TIME SLLIDER */
+
+
+.videoplayer-runnabletrack--volume{
+    transform-origin: left;
+    transition: 100ms all ease-in-out;
+    transform: rotate(-90deg);
+}
+
+.videoplayer-control--volume:hover + .videoplayer-runnabletrack--volume[type=range][orient=vertical]{
+    max-width: 100px!important;
+}
+
+.videoplayer-control--volume:hover + .videoplayer-runnabletrack--volume[type=range][orient=vertical]::before{
+    max-width: 110px!important;
+}
+
+
+.videoplayer-runnabletrack--volume[type=range][orient=vertical]:hover,
+.videoplayer-runnabletrack--volume[type=range][orient=vertical]:focus {
+    max-width: 100px!important;
+}
+
+.videoplayer-runnabletrack--volume[type=range][orient=vertical]:hover::before,
+.videoplayer-runnabletrack--volume[type=range][orient=vertical]:focus::before{
+    max-width: 110px!important;
+}
+
+.videoplayer-control--volume:hover + .videoplayer-runnabletrack--volume[type=range][orient=vertical]::-webkit-slider-thumb{
+    max-width:10px;
+    max-height:10px;
+}
+
+.videoplayer-runnabletrack--volume[type=range][orient=vertical]:hover::-webkit-slider-thumb,
+.videoplayer-runnabletrack--volume[type=range][orient=vertical]:focus::-webkit-slider-thumb{
+    max-width:10px;
+    max-height:10px;
+}
+
+.videoplayer-runnabletrack--volume[type=range][orient=vertical]:hover::-webkit-slider-thumb:hover{
+    max-width:12px;
+    max-height:12px;
+}
+
+
+/*   ________   __    __   ________   __    __   ________   */
+/*  |__    __| |  |  |  | |   _____| |  \  /  | |   _____|  */ 
+/*     |  |    |  |__|  | |  |_____  |   \/   | |  |_____   */
+/*     |  |    |   __   | |   _____| |        | |   _____|  */
+/*     |  |    |  |  |  | |  |_____  |  |\/|  | |  |_____   */
+/*     |__|    |__|  |__| |________| |__|  |__| |________|  */
+/*                                                          */
+/* THEMES:[                                                 */
+/*    * flashy - the top notch styling                      */
+/*    * minimal - the top notch syling but less             */
+/*    * all-out - the top notch styling + more options      */
+/*    * rounded - different styling and                     */
+/*    * default || will be the default value                */
+/* ]                                                        */
+
+.videoplayer_theme--flashy .videoplayer-controller,
+.videoplayer_theme--flashy-minimal .videoplayer-controller{
+    inset:auto 10px 10px 10px;
+    width: unset;
+    padding: 5px 10px;
+    border-radius: 100px;
+    gap: 10px;
+}
+
+.videoplayer_theme--flashy .videoplayer-control.videoplayer-control--fullscreen{
+    padding:5px 10px;
+    background-color: var(--base-color);
+    border-radius: 30px;
+}
+
+
+.videoplayer-runnabletrack--time{
+    appearance:none;
+    background-color: transparent;
+    height:20px;
+    width: 100%;
+}
+
+.videoplayer-runnabletrack::-webkit-slider-runnable-track {
+    cursor: pointer;
+    background-color:#444; /* GRADIENT */
+    height:8px;
+}
+
+.videoplayer_theme--flashy .videoplayer-runnabletrack::-webkit-slider-runnable-track,
+.videoplayer_theme--flashy-minimal .videoplayer-runnabletrack::-webkit-slider-runnable-track {
+    border-radius: 20px;
+}
+
+.videoplayer-runnabletrack::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: var(--tile-color);
+    cursor: pointer;
+    height: 10px;
+    max-height: 0px;
+    max-width: 0px;
+    position: relative;
+    transform:translateY(-10%);
+    transition:100ms all ease-in-out;
+    width: 10px;
+}
+
+
+.videoplayer_theme--flashy .videoplayer-runnabletrack::-webkit-slider-thumb,
+.videoplayer_theme--flashy-minimal .videoplayer-runnabletrack::-webkit-slider-thumb {
+    border-radius:20px;
+}
+
+
+.videoplayer-runnabletrack--time::-webkit-slider-thumb{
+    max-height: 10px;
+    max-width: 10px;
+}
+
+
+.videoplayer-runnabletrack--volume[type=range][orient=vertical]{
+    appearance:none;
+    position:absolute;
+    background-color: transparent;
+    left:50%;
+    bottom:calc(100% + 10px);
+    transform-origin:left;
+    transform:rotate(-90deg);
+    height:20px;
+    max-width: 0px;
+}
+
+.videoplayer-runnabletrack--volume[type=range][orient=vertical]::before{
+    content: '';
+    display: block;
+    position: absolute;
+    inset:0 -5px 0 -5px;
+    background-color: rgba(00, 00, 00, 0.5);
+    max-width: 0;
+    z-index: -1;
+}
+
+.videoplayer_theme--flashy .videoplayer-runnabletrack--volume[type=range][orient=vertical]::before{
+    border-radius: 20px;
+}
+
+
+.videoplayer-runnabletrack::-webkit-slider-thumb:hover{
+    height: 12px;
+    width: 12px;
+    max-height: 12px;
+    max-width: 12px;
+    transform:translateY(-20%);
+}
+
+
+
+/* .videoplayer-runnabletrack--volume[type=range][orient=vertical]::-webkit-slider-runnable-track { common styles } */
+
+/* .videoplayer-runnabletrack--volume[type=range][orient=vertical]::-moz-range-track { common styles } */
+
+/* .videoplayer-runnabletrack--volume[type=range][orient=vertical]::-ms-track { common styles } */
+
+
+
+.videoplayer_theme--flashy-minimal .videoplayer-volume,
+.videoplayer_theme--flashy-minimal .videoplayer-control--fullscreen,
+.videoplayer_theme--flashy-minimal .videoplayer-controls {
+    display: none!important;
+}
+
+.videoplayer_theme--box-minimal .videoplayer-volume,
+.videoplayer_theme--box-minimal .videoplayer-control--fullscreen,
+.videoplayer_theme--box-minimal .videoplayer-controls {
+    display: none!important;
+}
+
+.videoplayer_theme--box-minimal .videoplayer-controller{
+    padding:10px 20px;
+    gap: 15px;
+}
+
+.videoplayer_theme--box .videoplayer-controller{
+    padding:10px 20px;
+    gap: 15px;
+}
+
+.videoplayer_theme--box .videoplayer-control--fullscreen {
+    padding:10px 10px;
+    background: var(--base-color) ;
+}
+
+.videoplayer-control--fullscreen {
+    padding: 3px;
+    background: var(--base-color);
+}

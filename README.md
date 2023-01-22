@@ -44,7 +44,6 @@ git version
 2. Installeer de app
 3. Als je de app opent en "New Connection" ziet staan ben je klaar, voor nu.
 
-</details>
 
 1. First of all add the script tag to your website. The source of this URL should be url
 ``` HTML

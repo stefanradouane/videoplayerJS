@@ -75,10 +75,9 @@ You added the the script tag on your HTML page. Now you have to create a videopl
 
 <em>Well done, you have created a default videoplayer</em>
 
-3. <details><summary><strong> Using this library as a NPM module</strong></summary>
+3. <details><summary><strong> Using this library as a NPM module</strong></summary> INformatie </details>
 Adding a theme to the videoplayer.
 TTsbjakdhaksluhfk
-</details>
 
 </details>
 

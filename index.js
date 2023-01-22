@@ -7,10 +7,10 @@ const errorMessages = {
 };
 
 const themes = ["flashy", "flashy-minimal", "box", "box-minimal", "minimal", "default"]
-//
-var Videos = document.querySelectorAll(".videoplayer");
 
-class videoplayerJS {
+var Videos = document.querySelectorAll(".vidplayer");
+
+class vidplayer {
     constructor(node, index) {
         this.node = node
         this.defaultStyling = this.getDefaultStyling();
@@ -145,14 +145,18 @@ class videoplayerJS {
         } else {
             this.blocks.parentNode.style.setProperty("--base-color", this.settings.colorscheme ? this.settings.colorscheme[0] : "rgba(11,11,11, .75)")
             this.blocks.parentNode.style.setProperty("--tile-color", this.settings.colorscheme ? this.settings.colorscheme[1] : "rgba(220, 220, 220, 1)")
-            this.blocks.parentNode.style.setProperty("--hover-color", this.settings.colorscheme ? colorScheme(this.settings.colorscheme[1]) : "rgba(200, 200, 200, 1)")
+            if(this.settings.colorscheme[2]) {
+                this.blocks.parentNode.style.setProperty("--hover-color", this.settings.colorscheme[2])
+            } else {
+                this.blocks.parentNode.style.setProperty("--hover-color", this.settings.colorscheme ? colorScheme(this.settings.colorscheme[1]) : "rgba(200, 200, 200, 1)")
+            }
         }
     }
 
     makeBlockElements() {
-        const parentNode = assignParent("section", ["videoplayer-container", `videoplayer-container-${this.id}`], this.node, this.theme)
-        const blockControls = DOMelementWithClass("section", "videoplayer-controls"); // middle
-        const blockController = DOMelementWithClass("section", "videoplayer-controller"); // bottom
+        const parentNode = assignParent("section", ["vidplayerontainer", `vividplayertainer-${this.id}`], this.node, this.theme)
+        const blockControls = DOMelementWithClass("section", "vidplayerontrols"); // middle
+        const blockController = DOMelementWithClass("section", "vidplayerontroller"); // bottom
         const styleSheet = this.makeElement("stylesheet")
         return {
             parentNode,
@@ -192,9 +196,9 @@ class videoplayerJS {
 
     makeElement(type, modifier) {
         if (type == "button") {
-            const element = DOMelementWithClass("button", "videoplayer-control")
+            const element = DOMelementWithClass("button", "vidplayerontrol")
             if (modifier == "action") {
-                const elementObjectPlay = DOMelementWithClass("svg", ["videoplayer-control__icon", "videoplayer-control__icon--play"])
+                const elementObjectPlay = DOMelementWithClass("svg", ["vidplayerontrol__icon", "vividplayertrol__icon--play"])
                 elementObjectPlay.setAttribute("viewBox", "0 0 175 200");
                 elementObjectPlay.dataset.action = "play";
 
@@ -202,7 +206,7 @@ class videoplayerJS {
                 playPath.setAttribute("d", "M0 0 L175 100 L0 200Z");
                 DOMappendChild(elementObjectPlay, playPath)
 
-                const elementObjectPause = DOMelementWithClass("svg", ["videoplayer-control__icon", "videoplayer-control__icon--pause"])
+                const elementObjectPause = DOMelementWithClass("svg", ["vidplayerontrol__icon", "vividplayertrol__icon--pause"])
                 elementObjectPause.setAttribute("viewBox", "0 0 175 200");
                 elementObjectPause.dataset.action = "pause";
 
@@ -216,7 +220,7 @@ class videoplayerJS {
                 pauseRectTwo.setAttribute("x", "110");
                 DOMappendChildren(elementObjectPause, [pauseRectOne, pauseRectTwo])
 
-                const elementObjectLoading = DOMelementWithClass("svg", ["videoplayer-control__icon", "videoplayer-control__icon--loading"])
+                const elementObjectLoading = DOMelementWithClass("svg", ["vidplayerontrol__icon", "vividplayertrol__icon--loading"])
                 elementObjectLoading.setAttribute("viewBox", "0 0 175 200");
 
                 const loadingCircle = DOMelementWithClass("circle")
@@ -229,22 +233,22 @@ class videoplayerJS {
                 DOMappendChildren(element, [elementObjectPlay, elementObjectPause, elementObjectLoading])
                 return element
             } else if (modifier == "volume") {
-                element.classList.add("videoplayer-control--volume")
+                element.classList.add("vidplayerontrol--volume")
 
-                const elementObjectVolume = DOMelementWithClass("svg", ["videoplayer-control__icon", "videoplayer-control__icon--volume"])
+                const elementObjectVolume = DOMelementWithClass("svg", ["vidplayerontrol__icon", "vividplayertrol__icon--volume"])
                 elementObjectVolume.setAttribute("viewBox", "0 0 558 560");
 
 
-                const speakerBase = DOMelementWithClass("path", ["videoplayer-control__icon-path", "videoplayer-control__icon-path--base"]);
+                const speakerBase = DOMelementWithClass("path", ["vidplayerontrol__icon-path", "vividplayertrol__icon-path--base"]);
                 speakerBase.setAttribute("d", "M0 188.5V371.5H121.778L274 524V36L121.778 188.5H0Z");
 
-                const speakerPath = DOMelementWithClass("path", ["videoplayer-control__icon-path", "videoplayer-control__icon-path--low"]);
+                const speakerPath = DOMelementWithClass("path", ["vidplayerontrol__icon-path", "vividplayertrol__icon-path--low"]);
                 speakerPath.setAttribute("d", "M421 280C421 224.331 389.995 175.684 345 152V209.535C360.118 228.208 369.322 252.908 369.322 280C369.322 307.092 360.109 331.763 345 350.466V408C389.995 386.24 421 336.646 421 280Z");
 
-                const speakerPathBig = DOMelementWithClass("path", ["videoplayer-control__icon-path", "videoplayer-control__icon-path--high"]);
+                const speakerPathBig = DOMelementWithClass("path", ["vidplayerontrol__icon-path", "vividplayertrol__icon-path--high"]);
                 speakerPathBig.setAttribute("d", "M345 0V65.7736C432.936 93.2328 497.143 178.806 497.143 280C497.143 381.194 432.936 466.777 345 494.236V560C467.016 530.953 558 416.653 558 280C558 143.347 467.016 29.0572 345 0Z");
 
-                const speakerPathMute = DOMelementWithClass("path", ["videoplayer-control__icon-path", "videoplayer-control__icon-path--mute"]);
+                const speakerPathMute = DOMelementWithClass("path", ["vidplayerontrol__icon-path", "vividplayertrol__icon-path--mute"]);
                 speakerPathMute.setAttribute("d", "M414.622 280.126L335.35 359.398L366.697 390.745L445.969 311.473L525.422 390.926L556.769 359.578L477.317 280.126L556.873 200.569L525.526 169.222L445.969 248.778L366.594 169.402L335.246 200.75L414.622 280.126Z");
 
                 DOMappendChildren(elementObjectVolume, [speakerBase, speakerPath, speakerPathBig, speakerPathMute])
@@ -252,20 +256,20 @@ class videoplayerJS {
                 return element
             }
         } else if (type == "runnabletrack") {
-            const runnableTrack = DOMelementWithClass("input", ["videoplayer-runnabletrack"])
-            // const runnableTrack_Track = DOMelementWithClass("input", ["videoplayer-runnabletrack__track", "videoplayer-runnabletrack__track--big"])
+            const runnableTrack = DOMelementWithClass("input", ["vidplayerunnabletrack"])
+            // const runnableTrack_Track = DOMelementWithClass("input", ["vidplayerunnabletrack__track", "vividplayernabletrack__track--big"])
             runnableTrack.setAttribute("type", "range");
             runnableTrack.setAttribute("min", "0");
             runnableTrack.setAttribute("max", "100");
 
             if (modifier == "time") {
-                runnableTrack.classList.add("videoplayer-runnabletrack--time")
+                runnableTrack.classList.add("vidplayerunnabletrack--time")
                 runnableTrack.setAttribute("value", 0);
                 runnableTrack.setAttribute("step", 0.000001);
             }
 
             if (modifier == "volume") {
-                runnableTrack.classList.add("videoplayer-runnabletrack--volume")
+                runnableTrack.classList.add("vidplayerunnabletrack--volume")
                 runnableTrack.setAttribute("value", 50)
                 runnableTrack.setAttribute("orient", "vertical")
             }
@@ -273,7 +277,7 @@ class videoplayerJS {
             // DOMappendChild(runnableTrack ,runnableTrack_Track);
             return runnableTrack;
         } else if (type == "volume") {
-            const volumeSection = DOMelementWithClass("section", "videoplayer-volume")
+            const volumeSection = DOMelementWithClass("section", "vidplayerolume")
             const volumeButton = this.makeElement("button", "volume")
             volumeButton.dataset.volume = 2;
             const volumeTrack = this.makeElement("runnabletrack", "volume")
@@ -292,26 +296,26 @@ class videoplayerJS {
             }
             return returnedElement
         } else if (type == "timer") {
-            const timer = DOMelementWithClass("p", "videoplayer-timer")
+            const timer = DOMelementWithClass("p", "vidplayerimer")
             this.timeManager(timer, this.node.currentTime)
 
             return timer
         } else if (type == "stylesheet") {
-            const styleSheet = DOMelementWithClass("style", "videoplayer-stylesheet")
+            const styleSheet = DOMelementWithClass("style", "vidplayertylesheet")
             styleSheet.setAttribute("type", "text/css")
-            styleSheet.textContent = `/* This file is created for a videoplayer ${this.id} */`
+            styleSheet.textContent = `/* This file is created for a vidplayer{this.id} */`
             return styleSheet
         } else if (type == "fullscreen") {
-            const element = DOMelementWithClass("button", ["videoplayer-control", "videoplayer-control--fullscreen"])
+            const element = DOMelementWithClass("button", ["vidplayerontrol", "vividplayertrol--fullscreen"])
 
-            const elementSvgFullScreenOpen = DOMelementWithClass("svg", ["videoplayer-control__icon", "videoplayer-control__icon--fs-open"])
+            const elementSvgFullScreenOpen = DOMelementWithClass("svg", ["vidplayerontrol__icon", "vividplayertrol__icon--fs-open"])
             elementSvgFullScreenOpen.setAttribute("viewBox", "0 0 219 164");
             
             const elementPathFullScreenOpen = DOMelementWithClass("path")
             elementPathFullScreenOpen.setAttribute("d", "M0 58V30V0H30H93V30H30V58H0ZM219 106V134V164H189H126V134H189V106H219ZM219 30V58H189V30H126V0H189H219V30ZM0 106V134V164H30H93V134H30V106H0Z");
             DOMappendChild(elementSvgFullScreenOpen, elementPathFullScreenOpen)
             
-            const elementSvgFullScreenClose = DOMelementWithClass("svg", ["videoplayer-control__icon", "videoplayer-control__icon--fs-close"])
+            const elementSvgFullScreenClose = DOMelementWithClass("svg", ["vidplayerontrol__icon", "vividplayertrol__icon--fs-close"])
             elementSvgFullScreenClose.setAttribute("viewBox", "0 0 219 164");
             
             const elementPathFullScreenClose = DOMelementWithClass("path")
@@ -410,7 +414,7 @@ class videoplayerJS {
 
             // BETTER SOLUTION THAN CUSTOM STYLESHEET or INCLUDE ALSO THEME STYLING 
             style = `background:linear-gradient(to right, var(--hover-color) ${timePercentage}%, grey ${timePercentage}%, grey ${this.buffered}%, black ${this.buffered}%, black 100%) !important;`
-            const styleItem = `.videoplayer-container-${this.id} .videoplayer-runnabletrack--time::-webkit-slider-runnable-track{${style}}`
+            const styleItem = `.vidplayerontainer-${this.id} .vividplayernabletrack--time::-webkit-slider-runnable-track{${style}}`
             this.blocks.styleSheet.textContent = styleItem;
         } else if (action == "volume") {
             let value;
@@ -452,7 +456,7 @@ class videoplayerJS {
         } else if (action == "fullscreen") {
             let element = this.blocks.parentNode;
             const request = () => {
-                element.classList.add("videoplayer-container--fullscreen")
+                element.classList.add("vidplayerontainer--fullscreen")
                 Object.keys(this.defaultStyling).forEach((key) => {
                     this.node.style[key] = "unset"
                 })
@@ -476,7 +480,7 @@ class videoplayerJS {
                 Object.keys(this.defaultStyling).forEach((key) => {
                     this.node.style[key] = this.defaultStyling[key]
                 })
-                element.classList.remove("videoplayer-container--fullscreen")
+                element.classList.remove("vidplayerontainer--fullscreen")
                 if(isFullScreen()){
                     if(document.exitFullscreen) {
                         document.exitFullscreen();
@@ -510,7 +514,7 @@ class videoplayerJS {
 }
 
 if (Videos) {
-    [...Videos].forEach((node, index) => new videoplayerJS(node, index))
+    [...Videos].forEach((node, index) => new vidplayer(node, index))
 }
 
 
@@ -547,11 +551,11 @@ function getVideoSettings(element) {
 }
 
 function assignParent(parentElement, classNames, element, theme) {
-    const container = DOMelementWithClass(parentElement, classNames); // container of the videoplayer -> used for css purpose.
+    const container = DOMelementWithClass(parentElement, classNames); // container of the vidplayer> used for css purpose.
     element.parentNode.insertBefore(container, element)
     container.appendChild(element)
     if (theme) {
-        container.classList.add(`videoplayer_theme--${theme}`)
+        container.classList.add(`vidplayerheme--${theme}`)
     }
     return container;
 }

@@ -9,9 +9,9 @@ To use this library you can use multiple solutions. The first solution is by sim
 <details>
   <summary>Use this library with the <script> tag</summary>
     1. First of all add the script tag to your website. The source of this URL should be
-    // URL
+    \n// URL
     2. Now you have to add the <link> tag to the <head> of your website. The source of this URL should be
-    // URL
+    \n// URL
 </details>
 <details>
   <summary>Use this library with NPM</summary>

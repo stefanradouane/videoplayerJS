@@ -67,6 +67,24 @@ You added the the script tag on your HTML page. Now you have to create a videopl
 </video>
 ```
 
+2. This videoplayer can be configured by adding a dataset attribute of `settings` to this videoplayer.
+
+```HTML
+<video class="videoplayer" data-settings="{}">
+```
+
+<em>Well done, you have created a default videoplayer</em>
+
+3. Adding a theme to the videoplayer.
+
+```HTML
+<video class="videoplayer" data-settings="{}">
+```
+4. <details>
+<summary><strong>Using this library as a NPM module</strong></summary>
+
+</details>
+
 </details>
 
 <details>

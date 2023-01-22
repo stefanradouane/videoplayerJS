@@ -158,6 +158,38 @@ By defining an `Array` of three value's as the color scheme the tile color, base
 </details>
 
 
+
+## Use case
+
+<details>
+<summary><strong>Use case library as script tag</strong></summary>
+
+```HTML
+<head>
+...
+<link rel="stylesheet" src="URL">
+</head>
+
+<body>
+...
+<video class="videoplayer" data-settings="{'theme': 'flashy', 'colorscheme': ['rgba(21,28,30,0.75)', 'rgb(190, 30, 200)']}">
+  <source>
+</video>
+...
+<script src="URL"> </script>
+</body>
+
+```
+
+</details>
+
+<details>
+<summary><strong>Use case library as a NPM module</strong></summary>
+
+</details>
+
+
+
 <!-- Making a `<video>` element in HTML is easy. The default controls are able if you add the property `controls` to the video element (`<video controls>`) -->
 
 

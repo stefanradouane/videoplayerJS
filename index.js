@@ -7,7 +7,7 @@ const errorMessages = {
 };
 
 const themes = ["flashy", "flashy-minimal", "box", "box-minimal", "minimal", "default"]
-
+//
 var Videos = document.querySelectorAll(".videoplayer");
 
 class videoplayerJS {

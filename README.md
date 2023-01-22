@@ -1,12 +1,9 @@
 # videoplayerJS
----
 
 ## 🎥 About this project
----
 Styling the default controls of an HTML `<video>` is not possible, but what if you want to make a custom videoplayer. videoplayerJS is the solution for this problem. With this js library you can create an videoplayer easier than ever before.
 
 ## ✨ Installation
----
 To use this library you can use multiple solutions. The first solution is by simply adding a `<script>` tag to your HTML. The second solution is to install this module through NPM.
 
 <details>

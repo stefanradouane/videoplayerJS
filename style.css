@@ -436,7 +436,10 @@
 /* .vidplayer-runnabletrack--volume[type=range][orient=vertical]::-ms-track { common styles } */
 
 
-
+.vidplayer_theme--minimal .vidplayer-volume,
+.vidplayer_theme--minimal .vidplayer-control--fullscreen,
+.vidplayer_theme--minimal .vidplayer-controls,
+.vidplayer_theme--flashy-minimal .vidplayer-volume,
 .vidplayer_theme--flashy-minimal .vidplayer-volume,
 .vidplayer_theme--flashy-minimal .vidplayer-control--fullscreen,
 .vidplayer_theme--flashy-minimal .vidplayer-controls {

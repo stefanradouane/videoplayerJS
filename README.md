@@ -25,40 +25,10 @@ So you want to use this library with a `script`:<br>
   ...
   <link rel="stylesheet" href="https://www.github.com" />
 </head>
-node -v
 ```
 
--   NPM
+3. <strong>Well done, for now you are all set up, <em>ain't that easy</em></strong>
 
-```
-// Install NPM
-npm install npm --global
-```
-
-```
-// Check NPM version
-npm -v
-```
-
--   Git // [Download Git](https://github.com/git-guides/install-git)
-
-```
-// Check version
-git version
-```
-
--   MongoDB Compass
-
-1. Download [MongoDB Compass](https://www.mongodb.com/try/download/compass)<br>
-2. Installeer de app
-3. Als je de app opent en "New Connection" ziet staan ben je klaar, voor nu.
-
-
-
-  
-2. 
-3. TEst
-4. TESTT
 </details>
 <details>
   <summary>Use this library with NPM</summary>

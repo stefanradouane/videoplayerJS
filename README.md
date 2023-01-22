@@ -80,8 +80,9 @@ You added the the script tag on your HTML page. Now you have to create a videopl
 ```HTML
 <video class="videoplayer" data-settings="{}">
 ```
-4. <details>
-<summary><strong>Using this library as a NPM module</strong></summary>
+<details>
+
+4. <summary><strong> Using this library as a NPM module</strong></summary>
 
 </details>
 

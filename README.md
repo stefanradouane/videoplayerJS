@@ -11,7 +11,12 @@ To use this library you can use multiple solutions. The first solution is by sim
 
 So you want to use this library with a `script`:<br>
 
-1. Node.js // [Download node.js](https://nodejs.org/en/download/)
+1. First of all add the script tag to your website. The source of this URL should be url
+``` HTML
+  <body>
+    <script src="LINK TO SCRIPT"></script>
+  </body>
+```
 2. Test
 
 ```
@@ -45,12 +50,7 @@ git version
 3. Als je de app opent en "New Connection" ziet staan ben je klaar, voor nu.
 
 
-1. First of all add the script tag to your website. The source of this URL should be url
-``` HTML
-  <body>
-    <script src="LINK TO SCRIPT"></script>
-  </body>
-```
+
   
 2. Now you have to add the <link> tag to the <head> of your website. The source of this URL should be
 3. TEst

@@ -17,7 +17,7 @@ So you want to use this library with a `script`:<br>
     <script src="LINK TO SCRIPT"></script>
   </body>
 ```
-2. Test
+2. Now you have to add the <link> tag to the <head> of your website. The source of this URL should be
 
 ```
 // Check node version
@@ -52,7 +52,7 @@ git version
 
 
   
-2. Now you have to add the <link> tag to the <head> of your website. The source of this URL should be
+2. 
 3. TEst
 4. TESTT
 </details>

@@ -92,7 +92,7 @@ You can use a theme by simply defining a theme in the dataset `settings`.
 <video class="videoplayer" data-settings="{'theme': 'THEME NAME'}">
 ```
 
-<em>If there is no theme defined the default theme will be used.</em>
+> <em>If there is no theme defined the default theme will be used.</em>
 
 4. <strong>Adding a colorscheme to the videoplayer.</strong>
 
@@ -145,7 +145,7 @@ By defining an `Array` of three value's as the color scheme the tile color, base
 
 
 
-
+### That's it. Enjoy the videoplayer!
 
 
 <!-- const themes = ["flashy", "flashy-minimal", "box", "box-minimal", "minimal", "default"] -->

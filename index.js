@@ -7,6 +7,8 @@ const errorMessages = {
 };
 const themes = ["flashy", "flashy-minimal", "box", "box-minimal", "minimal", "default"]
 
+
+
 var Videos = document.querySelectorAll(".vidplayer");
 
 class vidplayerJS {
@@ -98,13 +100,22 @@ class vidplayerJS {
         })
 
         document.addEventListener("fullscreenchange", (e) => {
-            let isFullScreen = document.isFullScreen || document.msIsFullScreen || document.mozIsFullScreen || document.webkitIsFullScreen
+            let isFullScreen = document.fullscreenElement || document.msFullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
             if(e.target == this.node || e.target == this.blocks.parentNode){
                 if(!isFullScreen) {
                     this.videoAction("fullscreen", "close") 
                 }
             }
         })
+
+        document.addEventListener("webkitfullscreenchange", (e) => {
+            let isFullScreen = document.fullscreenElement || document.msFullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
+            if(e.target == this.node || e.target == this.blocks.parentNode){
+                if(!isFullScreen) {
+                    this.videoAction("fullscreen", "close") 
+                }
+            }
+        });
 
         this.node.addEventListener("dblclick", () => {
             this.videoAction("fullscreen") 
@@ -132,8 +143,10 @@ class vidplayerJS {
         if (!this.node.poster) {
             this.node.style.background = "#333"
         }
-        
-        
+
+        if(!!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0){
+            document.all[0].setAttribute("onclick", "")
+        }   
         this.blocks = this.makeBlockElements()
         this.elements = this.makeElementElements()
         this.appendElements()
@@ -151,6 +164,10 @@ class vidplayerJS {
             }
         }
     }
+
+    
+
+    
 
     makeBlockElements() {
         const parentNode = assignParent("section", ["vidplayer-container", `vidplayer-container-${this.id}`], this.node, this.theme)
@@ -270,7 +287,6 @@ class vidplayerJS {
             if (modifier == "volume") {
                 runnableTrack.classList.add("vidplayer-runnabletrack--volume")
                 runnableTrack.setAttribute("value", 50)
-                runnableTrack.setAttribute("orient", "vertical")
             }
 
             // DOMappendChild(runnableTrack ,runnableTrack_Track);
@@ -413,7 +429,8 @@ class vidplayerJS {
 
             // BETTER SOLUTION THAN CUSTOM STYLESHEET or INCLUDE ALSO THEME STYLING 
             style = `background:linear-gradient(to right, var(--hover-color) ${timePercentage}%, grey ${timePercentage}%, grey ${this.buffered}%, black ${this.buffered}%, black 100%) !important;`
-            const styleItem = `.vidplayer-container-${this.id} .vidplayer-runnabletrack--time::-webkit-slider-runnable-track{${style}}`
+            let styleItem = `.vidplayer-container-${this.id} .vidplayer-runnabletrack--time::-webkit-slider-runnable-track{${style}}`
+            styleItem += `.vidplayer-container-${this.id} .vidplayer-runnabletrack--time::-moz-range-track{${style}}`
             this.blocks.styleSheet.textContent = styleItem;
         } else if (action == "volume") {
             let value;
@@ -471,7 +488,7 @@ class vidplayerJS {
 
                 } 
                 else if (this.node.webkitEnterFullscreen) {
-                    return this.node.webkitEnterFullscreen()
+                    this.node.webkitEnterFullscreen()
                 }
             }
 
@@ -492,7 +509,7 @@ class vidplayerJS {
             }
         
             const isFullScreen = () => {
-                return document.isFullScreen || document.msIsFullScreen || document.mozIsFullScreen || document.webkitIsFullScreen;
+                return document.fullscreenElement || document.webkitIsFullScreen || document.msIsFullScreen || document.mozIsFullScreen;
             }
         
             const toggle = () => {
@@ -669,3 +686,7 @@ function getCSSColorValue(colorName) {
     document.body.removeChild(element);
     return computedColor;
 }
+
+
+
+

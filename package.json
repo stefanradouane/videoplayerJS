@@ -1,6 +1,6 @@
 {
   "name": "vidplayer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple to use videoplayer to do the styling and fixes the eventhandlers",
   "main": "index.js",
   "scripts": {

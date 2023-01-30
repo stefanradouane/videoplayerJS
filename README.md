@@ -128,6 +128,7 @@ By defining an `Array` of three value's as the color scheme the tile color, base
 
 
 ### That's it. Enjoy the vidplayer
+</details>
 
 ## Use case
 
@@ -152,6 +153,7 @@ By defining an `Array` of three value's as the color scheme the tile color, base
 </body>
 
 ```
+</details>
 
 
 

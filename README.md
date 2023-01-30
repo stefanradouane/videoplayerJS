@@ -33,7 +33,7 @@ So you want to use this library with a `script` tag:<br>
 
 </details>
 
-## :movie_camera: Using this library
+## :accordion: Using this library
 
 You have now installed this library. The usage of this library depends if you have installed it from NPM or with a `script` tag.
 

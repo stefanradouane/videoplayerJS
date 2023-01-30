@@ -50,13 +50,13 @@ You added the the script tag on your HTML page. Now you have to create a vidplay
 </video>
 ```
 
-2. This vidplayeran be configured by adding a dataset attribute of `settings` to this vividplayer
+2. This vidplayeran be configured by adding a dataset attribute of `settings` to this vidplayer
 
 ```HTML
 <video class="vidplayer" data-settings="{}">
 ```
 
-<em>Well done, you have created a default vidplayer<em>
+<em>Well done, you have created a default vidplayer</em>
 
 3. Adding a theme to the vidplayer
 

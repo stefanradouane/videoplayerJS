@@ -33,7 +33,7 @@ So you want to use this library with a `script` tag:<br>
 
 </details>
 
-## Using this library
+## :movie_camera: Using this library
 
 You have now installed this library. The usage of this library depends if you have installed it from NPM or with a `script` tag.
 
@@ -130,7 +130,7 @@ By defining an `Array` of three value's as the color scheme the tile color, base
 ### That's it. Enjoy the vidplayer
 </details>
 
-## Use case
+## :framed_picture: Use case
 
 ### 
 

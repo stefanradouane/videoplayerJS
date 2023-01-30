@@ -31,6 +31,8 @@ So you want to use this library with a `script` tag:<br>
 
 > There might be a change that these links doesn't work. In that case it's good that you have installed the module so you have these files locally inside your `node_modules` directory
 
+</details>
+
 ## Using this library
 
 You have now installed this library. The usage of this library depends if you have installed it from NPM or with a `script` tag.
@@ -54,7 +56,7 @@ You added the the script tag on your HTML page. Now you have to create a vidplay
 <video class="vidplayer" data-settings="{}">
 ```
 
-<em>Well done, you have created a default vidplayerem>
+<em>Well done, you have created a default vidplayer<em>
 
 3. Adding a theme to the vidplayer
 

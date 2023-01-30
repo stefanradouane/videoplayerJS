@@ -1,7 +1,7 @@
 # vidplayer
 
 ## 🎥 About this project
-Styling the default controls of an HTML `<video>` is not possible, but what if you want to make a custom vidplayervividplayers the solution for this problem. With this js front-end library you can create an vidpvidplayerr than ever before.
+Styling the default controls of an HTML `<video>` is not possible, but what if you want to make a custom videoplayer the solution for this problem. With this javascript front-end library you can create an videoplayer than ever before.
 
 ## ✨ Installation
 Using this library is very easy, use it by simply adding a `<script>` tag to your HTML.
@@ -15,7 +15,7 @@ So you want to use this library with a `script` tag:<br>
 ``` HTML
   <body>
     ...
-    <script src="https://stefanradouane.github.io/vidplayer/script.js"></script>
+    <script src="https://stefanradouane.github.io/vidplayer/index.js"></script>
   </body>
 ```
 2. Now you have to add the link tag to the head of your website. The source of this URL should be
@@ -43,7 +43,7 @@ You added the the script tag on your HTML page. Now you have to create a vidplay
 1. First create your video element and add the class name of vidplayer
 
 ```HTML
-<video class="vidplayer
+<video class="vidplayer">
   <source ...>
 </video>
 ```
@@ -51,7 +51,7 @@ You added the the script tag on your HTML page. Now you have to create a vidplay
 2. This vidplayeran be configured by adding a dataset attribute of `settings` to this vividplayer
 
 ```HTML
-<video class="vidplayerdata-settings="{}">
+<video class="vidplayer" data-settings="{}">
 ```
 
 <em>Well done, you have created a default vidplayerem>
@@ -70,12 +70,12 @@ There are a couple automatic created themes you can use. These are:
 You can use a theme by simply defining a theme in the dataset `settings`.
 
 ```HTML
-<video class="vidplayerdata-settings="{'theme': 'THEME NAME'}">
+<video class="vidplayer" data-settings="{'theme': 'THEME NAME'}">
 ```
 
 > <em>If there is no theme defined the default theme will be used.</em>
 
-4. <strong>Adding a colorscheme to the vidplayer/strong>
+4. <strong>Adding a colorscheme to the vidplayer </strong>
 
 The colorscheme contains three colors. These colors are: 
 
@@ -99,7 +99,7 @@ To define the colorscheme there are a couple posibilities
 By defining a `String` as the colorscheme only the tile color will be set. 
 
 ```HTML
-<video class="vidplayerdata-settings="{'colorscheme': 'COLOR'}">
+<video class="vidplayer" data-settings="{'colorscheme': 'COLOR'}">
 ```
 
 2. Define base color and tile color
@@ -107,7 +107,7 @@ By defining a `String` as the colorscheme only the tile color will be set.
 By defining an `Array` of two value's as the color scheme the tile color an base color will be defined.
 
 ```HTML
-<video class="vidplayerdata-settings="{'colorscheme': ['COLOR', 'COLOR']}">
+<video class="vidplayer" data-settings="{'colorscheme': ['COLOR', 'COLOR']}">
 ```
 
 <em><strong>The first value represents the base color, and the second value the tile color</strong></em>
@@ -117,7 +117,7 @@ By defining an `Array` of two value's as the color scheme the tile color an base
 By defining an `Array` of three value's as the color scheme the tile color, base color and hover color will be defined.
 
 ```HTML
-<video class="vidplayerdata-settings="{'colorscheme': ['COLOR', 'COLOR', 'COLOR']}">
+<video class="vidplayer" data-settings="{'colorscheme': ['COLOR', 'COLOR', 'COLOR']}">
 ```
 
 <em><strong>The first value represents the base color, the second value the tile color and the third value the hover color</strong></em>
@@ -128,6 +128,8 @@ By defining an `Array` of three value's as the color scheme the tile color, base
 ### That's it. Enjoy the vidplayer
 
 ## Use case
+
+### 
 
 <details>
 <summary><strong>Use case library as script tag</strong></summary>
@@ -140,7 +142,7 @@ By defining an `Array` of three value's as the color scheme the tile color, base
 
 <body>
 ...
-<video class="vidplayerdata-settings="{'theme': 'flashy', 'colorscheme': ['rgba(21,28,30,0.75)', 'rgb(190, 30, 200)']}">
+<video class="vidplayer" data-settings="{'theme': 'flashy', 'colorscheme': ['rgba(21,28,30,0.75)', 'rgb(190, 30, 200)']}">
   <source>
 </video>
 ...
